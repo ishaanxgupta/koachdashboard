@@ -1,20 +1,29 @@
 /* Global styles */
-body {
-  font-family: 'Roboto', sans-serif; /* Modern font */
+body, html {
   margin: 0;
   padding: 0;
+  min-height: 100%;
+  width: 100%;
   background-color: #f4f4f4;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 20px;
+  box-sizing: border-box; /* Ensures padding is included within width/height */
 }
 
-/* Dashboard styles */
+.dashboard {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .dashboard ul {
   list-style: none;
   padding: 0;
@@ -27,6 +36,7 @@ body {
   padding: 10px 20px;
   border-radius: 8px;
   transition: background-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard ul li:hover {
@@ -47,13 +57,14 @@ a:hover {
 
 /* User Profile styles */
 .user-profile, .user-activities {
-  width: 80%;
+  width: 100%;
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card effect */
+  box-sizing: border-box; /* Ensures padding stays within the box size */
 }
 
 .user-profile h2 {
@@ -90,14 +101,27 @@ button:hover {
   background-color: #2c80b4;
 }
 
-/* Responsive styles */
+/* Mobile responsiveness */
 @media (max-width: 600px) {
   .user-profile, .user-activities {
-    width: 100%;
+    width: 100%; /* Take full width on mobile */
     margin: 10px 0;
   }
 
   .App {
     padding: 10px;
+    min-height: 100vh; /* Ensure the app covers the entire viewport */
+  }
+
+  h2, h3 {
+    font-size: 1.2em; /* Adjust header size for mobile */
+  }
+
+  .dashboard ul li {
+    padding: 10px; /* Less padding on smaller screens */
+  }
+
+  button {
+    padding: 8px 16px; /* Smaller button for mobile */
   }
 }

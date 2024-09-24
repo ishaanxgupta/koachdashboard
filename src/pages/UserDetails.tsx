@@ -48,7 +48,6 @@ const UserDetails: React.FC = () => {
   return (
     <div>
       {user && <UserProfile user={user} />}
-      <h2>Activities</h2>
       <UserActivities posts={posts} />
     </div>
   );
